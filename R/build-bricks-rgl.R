@@ -520,7 +520,9 @@ build_bricks <- function(brick_list,
   
   rgl::bg3d(color = background_color)
   
-  rgl::rgl.viewpoint(userMatrix =  rgl::rotate3d(rgl::par3d("userMatrix"), 0, 0, 0 ,1) ,
+  # rgl::rgl.viewpoint(userMatrix =  rgl::rotate3d(rgl::par3d("userMatrix"), 0, 0, 0 ,1) ,
+  #                    fov=0) #All bricks, regardless of Z, are perceived as same size
+
+  rgl::view3d(userMatrix =  rgl::rotate3d(rgl::par3d("userMatrix"), 0, 0, 0 ,1) ,
                      fov=0) #All bricks, regardless of Z, are perceived as same size
-  
 }
